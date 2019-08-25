@@ -34,7 +34,7 @@ pipeline{
         stage("Write to a file"){
             steps{
                 ws("tmp/"){
-                    writeFile text: "Test"\nline2, file: "TestFile"
+                    writeFile text: "Test"\n "line2", file: "TestFile"
                     sh "cat TestFile"
                 }
             }
