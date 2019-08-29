@@ -71,13 +71,6 @@ pipeline{
                 }
             }
         }
-        stage("Clone VPC Repo"){
-            steps{
-                ws("terraform/"){
-                    sh "terraform plan --var-file=dev.tfvars"
-                }
-            }
-        }
     }
     post{
         success {
