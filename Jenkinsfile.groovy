@@ -89,7 +89,7 @@ pipeline{
          stage("Build VPC "){
             steps{
                 ws("terraform/"){
-                    sh "terraform  ${USER_ACTION} -var-file=dev.tfvars"
+                    sh "terraform  ${USER_ACTION} -var-file=dev.tfvars -auto-approve"
                 }
             }
         }
