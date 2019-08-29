@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    properties([parameters([string(defaultValue: 'plan', description: 'plan/apply', name: 'USER_ACTION', trim: true)])])
+    arameters {string(defaultValue: "plan", description: "plan/apply'', name: 'USER_ACTION')}
     stages{
         stage("Run Command"){
             steps{
