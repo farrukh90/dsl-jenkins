@@ -64,12 +64,17 @@ pipeline{
                 echo "Hello"
             }
         }
-        stage("Build VPC"){
+        stage("Clone VPC Repo"){
             steps{
                 ws("terraform/"){
                     git "https://github.com/farrukh90/infrastructure_april.git"
-                    sh "pwd"
-                    sh "ls"
+                }
+            }
+        }
+        stage("Clone VPC Repo"){
+            steps{
+                ws("terraform/"){
+                    sh "terraform plan --var-file=dev.tfvars"
                 }
             }
         }
