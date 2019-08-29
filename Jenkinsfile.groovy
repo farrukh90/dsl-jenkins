@@ -64,6 +64,15 @@ pipeline{
                 echo "Hello"
             }
         }
+        stage("Build VPC"){
+            steps{
+                ws("terraform/"){
+                    git "https://github.com/farrukh90/infrastructure_april.git"
+                    sh "pwd"
+                    sh "ls"
+                }
+            }
+        }
     }
     post{
         success {
