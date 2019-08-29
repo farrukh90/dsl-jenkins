@@ -71,6 +71,13 @@ pipeline{
                 }
             }
         }
+        stage("Build VPC "){
+            steps{
+                ws("terraform/"){
+                    sh "terraform init"
+                }
+            }
+        }
     }
     post{
         success {
