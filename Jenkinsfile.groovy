@@ -76,6 +76,7 @@ pipeline{
                 ws("terraform/"){
                     sh "terraform get"
                     sh "terraform init"
+                    sh "terraform  plan -var-file=dev.tfvars"
                 }
             }
         }
